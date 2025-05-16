@@ -3,7 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
-import 'package:mobile_keyboard_expandable/custom_code/expandable_controller_manager.dart';
+import 'package:expandable_controller_implementation/custom_code/expandable_controller_manager.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -62,7 +62,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           title: Text(
-            'Expandable Sample POC 2',
+            'Expandable Sample',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   font: GoogleFonts.interTight(
                     fontWeight:
@@ -119,7 +119,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 width: double.infinity,
                                 color: Color(0x00000000),
                                 child: ExpandableNotifier(
-                                  key: ValueKey(testDataIndex),
                                   // initialExpanded: false,
                                   controller: _model
                                       .expandableControllerInstance
@@ -197,39 +196,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           'Keytp7_${testDataItem}',
                                         ),
                                         hintText: '${testDataItem} Name',
-                                        // submitAction: () async {
-                                        //   _model.expandableControllerInstance
-                                        //       ?.expandNext(
-                                        //     testDataIndex,
-                                        //   );
                                         submitAction: () async {
-                                          final nextIndex = testDataIndex + 1;
-
-                                          if (_model.expandableControllerInstance !=
-                                                  null &&
-                                              nextIndex <
-                                                  _model.sampleData.length) {
-                                            // 1. Expand the next panel
-                                            _model.expandableControllerInstance!
-                                                .expandNext(testDataIndex);
-
-                                            // 2. Wait for the panel to expand (UI rebuild)
-                                            Future.delayed(
-                                                const Duration(
-                                                    milliseconds: 300), () {
-                                              final nextFocusNode = _model
-                                                  .inputModels
-                                                  .getModel(
-                                                      _model.sampleData[
-                                                          nextIndex],
-                                                      nextIndex)
-                                                  .textFieldFocusNode;
-
-                                              // 3. Request focus → brings up keyboard
-                                              FocusScope.of(context)
-                                                  .requestFocus(nextFocusNode);
-                                            });
-                                          }
+                                          _model.expandableControllerInstance
+                                              ?.expandNext(
+                                            testDataIndex,
+                                          );
                                         },
                                       ),
                                     ),

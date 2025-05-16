@@ -4,7 +4,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import 'home_page_widget.dart' show HomePageWidget;
-import 'package:mobile_keyboard_expandable/custom_code/expandable_controller_manager.dart';
+import 'package:expandable_controller_implementation/custom_code/expandable_controller_manager.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';

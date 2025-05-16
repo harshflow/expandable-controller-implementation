@@ -1,4 +1,4 @@
-package com.mycompany.mobilekeyboardexpandable
+package com.mycompany.expandablecontrollerimplementation
 
 import io.flutter.embedding.android.FlutterActivity
 
